@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <form action="/events/events-list/add" method="POST">
+                <div class="form-group">
+                    <label for="comentar">Comment</label>
+                    <input type="text"
+                           class="form-control"
+                           id="comentar"
+                           name="comentar"
+                           th:value="(${review} != null ? ${review.getComentar()} : '')"
+                           required
+                           placeholder="Enter a comment">
+                </div>
+                <div class="form-group">
+                    <label for="ocenka">Grade</label>
+                    <input type="number"
+                           class="form-control"
+                           id="ocenka"
+                           name="ocenka"
+                           th:value="(${review} != null ? ${review.getOcenka()} : '')"
+                           placeholder="Give grade">
+                </div>
+                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                <a type="button" class="btn btn-primary" href="/events/events-list">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
