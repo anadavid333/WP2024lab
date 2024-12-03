@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   postgres:
     image: postgres:15
@@ -6,9 +7,10 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER:  postgres
+      POSTGRES_USER: wp
       POSTGRES_PASSWORD: wp123
       POSTGRES_DB: lab3Moja
+
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
